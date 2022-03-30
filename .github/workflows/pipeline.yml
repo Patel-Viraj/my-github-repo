@@ -1,0 +1,13 @@
+name: folder
+on:
+ - push
+
+jobs:
+  test:
+  
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v1
+      - name: Line one
+        run: echo "from folder"
+
