@@ -12,4 +12,4 @@ jobs:
     - name: Run a one-line script
       run: |
         pwd && ls -a
-        bash /script/application_start.sh
+        bash ./scripts/application_start.sh
