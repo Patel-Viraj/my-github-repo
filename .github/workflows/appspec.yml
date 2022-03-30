@@ -11,5 +11,4 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run a one-line script
       run: |
-        pwd && ls -a
-        bash ./scripts/application_start.sh
+        ./scripts/application_start.sh
