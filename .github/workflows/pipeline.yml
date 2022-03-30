@@ -16,7 +16,7 @@ jobs:
        echo "start update"
        sudo apt update
        echo "start install python"
-       sudo apt install python3.8
+       sudo apt install python3.8 -y
        echo "start install awscli"
        sudo pip install awscli
        python --version
