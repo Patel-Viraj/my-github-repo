@@ -13,8 +13,11 @@ jobs:
     #- uses: jakejarvis/s3-sync-action@master
     - name: copy to s3
       run: |
+       echo "start update"
        apt update
-       apt install python3.8  
+       echo "start install python"
+       apt install python3.8
+       echo "start install awscli"
        pip install awscli
        python --version
        aws --version
