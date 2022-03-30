@@ -14,10 +14,10 @@ jobs:
     - name: copy to s3
       run: |
        echo "start update"
-       apt update
+       sudo apt update
        echo "start install python"
-       apt install python3.8
+       sudo apt install python3.8
        echo "start install awscli"
-       pip install awscli
+       sudo pip install awscli
        python --version
        aws --version
