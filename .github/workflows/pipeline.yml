@@ -12,6 +12,7 @@ jobs:
     - uses: actions/checkout@main
     #- uses: jakejarvis/s3-sync-action@master
     - name: copy to s3
+    
       run: |
        echo "start update"
        sudo apt update
