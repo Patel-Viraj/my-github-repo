@@ -10,4 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: bash /script/application_start.sh
+      run: |
+        pwd && ls -a
+        bash /script/application_start.sh
