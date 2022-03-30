@@ -18,5 +18,6 @@ jobs:
        sudo apt update
        echo "start install python"
        echo "start install awscli"
-       python --version
-       aws --version
+       touch content.html
+       aws s3 cp content.html s3://staging-devops-1/
+       echo "file copy"
