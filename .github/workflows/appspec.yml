@@ -9,6 +9,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: |
-        sh ./scripts/application_start.sh
+    - name: Run a script 1
+      run:  sh ./scripts/application_stop.sh
+    - name: Run a script 2
+      run:  sh ./scripts/before_install.sh
+    - name: Run a script 3
+      run:  sh ./scripts/application_start.sh
