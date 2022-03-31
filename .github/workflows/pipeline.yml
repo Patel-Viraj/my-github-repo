@@ -13,7 +13,7 @@ jobs:
     - name: copy to s3
     
       run: |
-       aws s3 cp ./*.html s3://staging-devops-1/
+       aws s3 cp -r . s3://staging-devops-1/
        echo "file copy"
 
       env:
