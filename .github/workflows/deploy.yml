@@ -22,4 +22,9 @@ jobs:
       run: |
        ssh -t ubuntu@3.83.220.131 'cd /home/ubuntu/node-app && npm i'
        echo "Packages Installed"
+
+    - name: Start Application
+      run: |
+       ssh -t ubuntu@3.83.220.131 'cd /home/ubuntu/node-app && pm2 restart app.js'
+       echo "Application is Live"   
         
