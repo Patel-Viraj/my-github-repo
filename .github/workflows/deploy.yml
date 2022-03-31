@@ -31,5 +31,7 @@ jobs:
     - name: Start Application
       run: |
        ssh -t ubuntu@35.174.116.224 'cd /home/ubuntu/node-app && pm2 restart app'
+       if: $? == 0
+       run: echo "Passes"
        echo "Application is Live"   
         
