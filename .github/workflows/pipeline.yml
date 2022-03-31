@@ -14,6 +14,8 @@ jobs:
       run: |
        aws s3 sync . "$AWS_S3_BUCKET"
        echo "file Updated"
+    - name: copy to s3 
+      run: | 
        aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_ID" --paths '/*'
        echo "Website updated"
   #  - name: Invalidation request   
