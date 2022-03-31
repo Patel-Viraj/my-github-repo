@@ -14,9 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - name: Take Backup 
-      run: |
-             
-       echo "Backup Saved"
+      run:  echo "Backup Saved"
 
     - name: copy to Deploy server 
       run: |
@@ -30,6 +28,6 @@ jobs:
 
     - name: Start Application
       run: |
-       ssh -t ubuntu@35.174.116.224 'cd /home/ubuntu/node-app && pm2 start app'
+       ssh -t ubuntu@35.174.116.224 'cd /home/ubuntu/node-app && pm2 restart app'
        echo "Application is Live"   
         
