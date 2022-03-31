@@ -17,7 +17,8 @@ jobs:
 
     - name: copy to Deploy server 
       run: |
-       ssh -t ubuntu@35.174.116.224 "git clone https://github.com/Patel-Viraj/my-github-repo.git"
+       rm -rf my-github-repo
+       ssh -t ubuntu@35.174.116.224 "git clone --branch deploy  https://github.com/Patel-Viraj/my-github-repo.git"
        echo "file Updated"
        echo "file Updated"
       
