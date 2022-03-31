@@ -13,7 +13,7 @@ jobs:
     - name: copy to s3
     
       run: |
-       aws s3 cp -r ./* s3://staging-devops-1/
+       aws s3 sync . s3://staging-devops-1/
        echo "file Updated"
 
       env:
