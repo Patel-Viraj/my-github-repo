@@ -14,7 +14,7 @@ jobs:
     
       run: |
        aws s3 cp -r . s3://staging-devops-1/
-       echo "file copy"
+       echo "file Updated"
 
       env:
        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
