@@ -14,10 +14,6 @@ jobs:
     - name: copy to s3
     
       run: |
-       echo "start update"
-       sudo apt update
-       echo "start install python"
-       echo "start install awscli"
        touch content.html
       env:
        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
