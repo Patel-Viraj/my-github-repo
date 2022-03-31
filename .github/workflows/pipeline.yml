@@ -14,10 +14,11 @@ jobs:
       run: |
        aws s3 sync . "$AWS_S3_BUCKET"
        echo "file Updated"
-    - name: Invalidation request   
-      run: |
        aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_ID" --paths '/*'
-       echo "Website updated"  
+       echo "Website updated"
+  #  - name: Invalidation request   
+   #   run: |
+         
 
       env:
        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
