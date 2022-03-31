@@ -18,8 +18,8 @@ jobs:
        rsync -zhvr . ubuntu@3.83.220.131:/home/ubuntu/node-app/
        echo "file Updated"
       
-   # - name: cloud front
-   #   run: |
-   #    aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_ID" --paths '/*'
-   #   echo "Website updated"
+    - name: Install Packages
+      run: |
+       ssh -t ubuntu@3.83.220.131 'cd /home/ubuntu/node-app && npm i'
+       echo "Packages Installed"
         
