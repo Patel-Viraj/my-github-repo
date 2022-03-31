@@ -7,13 +7,13 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: runner2
     steps:
     - uses: actions/checkout@main
     - name: copy to s3
     
       run: |
-       aws s3 cp .  s3://staging-devops-1/
+       aws s3 cp ./*.html s3://staging-devops-1/
        echo "file copy"
 
       env:
