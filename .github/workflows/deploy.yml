@@ -15,16 +15,16 @@ jobs:
     - uses: actions/checkout@main
     - name: copy to Deploy server 
       run: |
-       rsync -zhvr . ubuntu@3.83.220.131:/home/ubuntu/node-app/
+       rsync -zhvr . ubuntu@35.174.116.224:/home/ubuntu/node-app/
        echo "file Updated"
       
     - name: Install Packages
       run: |
-       ssh -t ubuntu@3.83.220.131 'cd /home/ubuntu/node-app && npm i'
+       ssh -t ubuntu@35.174.116.224 'cd /home/ubuntu/node-app && npm i'
        echo "Packages Installed"
 
     - name: Start Application
       run: |
-       ssh -t ubuntu@3.83.220.131 'cd /home/ubuntu/node-app && pm2 restart app'
+       ssh -t ubuntu@35.174.116.224 'cd /home/ubuntu/node-app && pm2 restart app'
        echo "Application is Live"   
         
