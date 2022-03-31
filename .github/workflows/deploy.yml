@@ -15,8 +15,8 @@ jobs:
     - uses: actions/checkout@main
     - name: Take Backup 
       run: |  
-      ssh -t ubuntu@35.174.116.224 'mv -f /home/ubuntu/node-app/* /home/ubuntu/backup/'
-      echo "Backup Saved"
+       ssh -t ubuntu@35.174.116.224 'mv -f /home/ubuntu/node-app/* /home/ubuntu/backup/'
+       echo "Backup Saved"
 
     - name: copy to Deploy server 
       run: |
