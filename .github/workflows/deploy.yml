@@ -14,21 +14,23 @@ jobs:
     steps:
     - uses: actions/checkout@main
 
+    - name: Take backup 
+      run: |
+       ssh -t ubuntu@35.174.116.224 " 'cp' -fR /home/ubuntu/node-app/* /home/ubuntu/backup/ "
+       echo "file Updated"
 
     - name: copy to Deploy server 
       run: |
-       rm -rf my-github-repo
-       ssh -t ubuntu@35.174.116.224 "git clone --branch deploy  https://github.com/Patel-Viraj/my-github-repo.git"
-       echo "file Updated"
+       rsync -zhvr . ubuntu@35.174.116.224:/home/ubuntu/node-app/
        echo "file Updated"
       
     - name: Install Packages
       run: |
-       ssh -t ubuntu@35.174.116.224 'cd /home/ubuntu/my-github-repo && npm i'
+       ssh -t ubuntu@35.174.116.224 'cd /home/ubuntu/node-app && npm i'
        echo "Packages Installed"
 
     - name: Start Application
       run: |
-       ssh -t ubuntu@35.174.116.224 'cd /home/ubuntu/my-github-repo && pm2 restart app'
+       ssh -t ubuntu@35.174.116.224 'cd /home/ubuntu/node-app && pm2 restart app'
        echo "Application is Live"   
         
