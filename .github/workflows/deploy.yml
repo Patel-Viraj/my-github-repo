@@ -13,7 +13,12 @@ jobs:
        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
     - uses: actions/checkout@main
-    
+
+    - name: Take backup 
+      run: |
+       ssh -t ubuntu@35.174.116.224 " 'cp' -fR /home/ubuntu/node-app/* /home/ubuntu/backup/ "
+       echo "file Updated"
+
     - name: copy to Deploy server 
       run: |
        rsync -zhvr . ubuntu@35.174.116.224:/home/ubuntu/node-app/
