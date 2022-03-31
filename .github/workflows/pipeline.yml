@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: runner2
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@main
     - name: copy to s3
