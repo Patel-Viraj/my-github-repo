@@ -25,6 +25,6 @@ jobs:
 
     - name: Start Application
       run: |
-       ssh -t ubuntu@3.83.220.131 'cd /home/ubuntu/node-app && pm2 start app.js'
+       ssh -t ubuntu@3.83.220.131 'cd /home/ubuntu/node-app && pm2 restart app'
        echo "Application is Live"   
         
