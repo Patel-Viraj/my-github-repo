@@ -1,12 +1,12 @@
 pipeline {
          agent any
          stages {
-                //  stage('Check resources') {
-                //   steps {
-                //       git branch: "main"
-                //       url: ""    
-                //   }
-                //  }
+                 stage('Check resources') {
+                  steps {
+                      git branch: "main"
+                      url: "git branch: 'main', credentialsId: 'GITHUB_PRIVATE_KEY', url: 'git@github.com:Patel-Viraj/private-repo.git'"    
+                  }
+                 }
                  stage('Copy to S3') {
                   steps {
                       sh "aws configure set region $AWS_REGION" 
