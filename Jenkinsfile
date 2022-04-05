@@ -3,7 +3,8 @@ pipeline {
          stages {
                  stage('Copy to S3') {
                   steps {
-                     echo 'staring build the app'
+                     sh pwd
+                     sh aws --version
                   }
                  }
                  stage('build') {
