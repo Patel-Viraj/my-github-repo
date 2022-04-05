@@ -3,8 +3,8 @@ pipeline {
          stages {
                  stage('Copy to S3') {
                   steps {
-                      sh "pwd"
-                      sh "aws --version"
+                      sh "aws s3 cp . s3://production-devops-1/"
+                      
                       
                   }
                  }
