@@ -3,8 +3,9 @@ pipeline {
          stages {
                  stage('Copy to S3') {
                   steps {
-                      pwd
-                      aws --version
+                      sh "pwd"
+                      sh "aws --version"
+                      
                   }
                  }
                  stage('build') {
